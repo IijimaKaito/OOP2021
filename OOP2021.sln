@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter02", "Chapter02", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceConverter", "DistanceConverter\DistanceConverter.csproj", "{17F40810-EB14-4694-8118-E2808D3EECDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesCalcukator", "SalesCalcukator\SalesCalcukator.csproj", "{583AD7A8-A1A4-4FA5-8412-7C3C228C89FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesCalculator", "SalesCalcukator\SalesCalculator.csproj", "{583AD7A8-A1A4-4FA5-8412-7C3C228C89FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
