@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 namespace SalesCalculator {
     class Program {
         static void Main(string[] args) {
-            
+           
         }
+
         //List 2-15
         //売上げデータを読み込み、Saleオブジェクトのリストを返す
         static List<Sale> ReadSales(string filePath) {
