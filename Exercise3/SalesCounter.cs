@@ -15,6 +15,8 @@ namespace Exercise3{
             _sales = ReadSales(filePath);
         }
 
+      
+
 
         //List 2-15
         //売上げデータを読み込み、Saleオブジェクトのリストを返す
@@ -47,8 +49,21 @@ namespace Exercise3{
                 }
                 return dict;
             }
+        //商品カテゴリ別売上げを求める
+        public IDictionary<string, int> GetPerCategorySales() {
+            var dict = new Dictionary<string, int>();
+            foreach (var sale in _sales) {
+                if (dict.ContainsKey(sale.ProductCategory))
+                    //既にコレクションに店舗が設定されている
+                    dict[sale.ProductCategory] += sale.Amount;
+                else
+                    //コレクションへ店舗を登録
+                    dict[sale.ProductCategory] = sale.Amount;
 
+            }
+            return dict;
         }
+    }
     }
 
 

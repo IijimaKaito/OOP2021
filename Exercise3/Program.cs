@@ -9,9 +9,10 @@ namespace Exercise3 {
         static void Main(string[] args) {
             var sales = new SalesCounter("Sales.csv");
 
-            var amountPerStore = sales.GetPerStoreSales();//店舗別売り上げを求める
-            foreach(var obj in amountPerStore) {
-                Console.WriteLine("{0}{1}", obj.Key, obj.Value);
+            //var amountPerStore = sales.GetPerStoreSales();//店舗別売り上げを求める
+            var amountPerCategory = sales.GetPerCategorySales();//商品カテゴリ別売上げ求める
+            foreach(var obj in amountPerCategory) {           
+                Console.WriteLine("{0}　{1}円", obj.Key, obj.Value);
             }
         }
     }
