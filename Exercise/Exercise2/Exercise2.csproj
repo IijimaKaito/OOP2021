@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B585BEFE-8B4E-41A5-A238-329ED6B80791}</ProjectGuid>
+    <ProjectGuid>{5CC4FD7C-FC30-4D6A-8A9E-A467A49E51F7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Section1</RootNamespace>
-    <AssemblyName>Section1</AssemblyName>
+    <RootNamespace>Exercise2</RootNamespace>
+    <AssemblyName>Exercise2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,6 +35,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,16 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.cs" />
-    <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Exercise\Exercise1\Exercise1.csproj">
+    <ProjectReference Include="..\..\Section1\Section1.csproj">
+      <Project>{b585befe-8b4e-41a5-a238-329ed6b80791}</Project>
+      <Name>Section1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Exercise1\Exercise1.csproj">
       <Project>{d0c25695-4c0d-4ac4-b9ca-3f2ad37a4f32}</Project>
       <Name>Exercise1</Name>
     </ProjectReference>
