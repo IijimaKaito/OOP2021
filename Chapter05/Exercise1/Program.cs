@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace Exercise1 {
     class Program {
         static void Main(string[] args) {
+#if false 
+           
 
             var s1 = Console.ReadLine();
             var s2 = Console.ReadLine();
@@ -16,7 +18,7 @@ namespace Exercise1 {
             } else {
                 Console.WriteLine("一致していません");
             }
-
+#endif
         }
     }
 }
