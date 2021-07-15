@@ -21,7 +21,7 @@ namespace StopWatch {
         private void Form1_Load(object sender, EventArgs e) {
             lbTimerDisp.Text = sw.Elapsed.ToString(@"hh\:mm\:ss\.ff");
             //lbTimerDisp.Text = "00:00:00.00";//この記述でもOK
-            
+            tmDisp.Start();
         }
     }
 }
