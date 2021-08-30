@@ -17,10 +17,16 @@ namespace Exercise1
             Exercise1_2(file);
             Console.WriteLine("-------");
             Exercise1_3(file);
+            Console.WriteLine("-------"); 
+            var newfile = "sports.xml";//出力する新しいファイル
+            Exercise1_4(file, newfile);
             Console.WriteLine("-------");
+           
         }
 
-       static void Exercise1_1(string file)
+        
+
+        static void Exercise1_1(string file)
         {
             var xdoc = XDocument.Load(file);
             var sports = xdoc.Root.Elements()
@@ -62,6 +68,18 @@ namespace Exercise1
               .First();
 
             Console.WriteLine("{0}", sports.Name);
+        }
+        private static void Exercise1_4(string file,string newfile)
+        {
+            
+            var xdoc = XDocument.Load(file);
+            var element = new XElement("ballsport",
+                new XElement("name", "サッカー", new XAttribute("kanji", "蹴球")),
+                new XElement("teammembers", "11"),
+                new XElement("firstplayed", "1863")
+                );
+            xdoc.Root.Add(element);
+            xdoc.Save(newfile);
         }
     }
 }
