@@ -22,14 +22,44 @@ namespace Section04
         {
 
             //DownloadFileAsync();
+            int code;
+            Console.WriteLine("地域コードを入力");
+            Console.WriteLine("1:前橋\n2:みなかみ\n3:宇都宮\n4:水戸\n9:その他(直接入力)");
+            Console.Write(">");
 
-            var results = GetWeatherReportFromYahoo(4610);
+            code = int.Parse(Console.ReadLine());
+            //コード番号判別
+                switch(code)
+            {
+                case 1:
+                    code= 4210;
+            break;
+                case 2:
+                    code= 4220;
+                    break;
+                case 3:
+                    code= 4110;
+                    break;
+                case 4:
+                    code = 4010;
+                    break;
+                case 9:
+                    Console.WriteLine("コードを入力してください");
+                    Console.Write(">");
+                    code = code = int.Parse(Console.ReadLine());
+                    break;
+                default:
+                    Console.WriteLine("正しく入力してください");
+                    new Program();
+                    break;
+            }
+
+            var results = GetWeatherReportFromYahoo(code);
                 foreach(var s in results)
             {
                 Console.WriteLine(s);
                
             }
-            Console.ReadLine();
         }
         //リスト14.15
             public void DownloadString()
@@ -77,8 +107,10 @@ namespace Section04
         //リスト14.19
         private static IEnumerable<string> GetWeatherReportFromYahoo(int cityCode)
         {
+           
+
             using (var wc = new WebClient())
-            {
+            { 
                 wc.Headers.Add("Content-type", "charset=UTF-8");
                 var uriString = string.Format(
                     @"http://rss.weather.yahoo.co.jp/rss/days/{0}.xml", cityCode);
