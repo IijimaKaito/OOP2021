@@ -16,6 +16,8 @@ namespace RssReader
 {
     public partial class Form1 : Form
     {
+        List<XElement> xitem = new List<XElement>();
+
         public Form1()
         {
             InitializeComponent();
