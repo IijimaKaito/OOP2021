@@ -36,12 +36,17 @@ namespace RssReader
                 var stream = wc.OpenRead(uri);
 
                 XDocument xdoc = XDocument.Load(stream);
-                var nodes = xdoc.Root.Descendants("title");
-                foreach (var node in nodes)
+                var items = xdoc.Root.Descendants("item");
+                foreach (var item in items)
                 {
-                    lbTitles.Items.Add(node);
+                    lbTitles.Items.Add(item.Element("title").Value);
                 }
             }
+        }
+        private void lbTitles_SelectedIndexChanged(object sender,EventArgs e)
+        {
+            var num = lbTitles.SelectedIndex;
+            webBrowser = lbTitles.Items.Url;
         }
     }
 }
