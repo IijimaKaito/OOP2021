@@ -57,5 +57,12 @@ namespace RssReader
             lbDescription.Text = "概要\n";
             lbDescription.Text += (items.ToArray())[lbTitles.SelectedIndex].Description;
         }
+
+        private void bt1_Click(object sender, EventArgs e)
+        {
+            //新しいFormへ表示するリンク先を渡す処理を追加
+            var wbForm = new Form2();
+            wbForm.Show();
+        }
     }
 }
