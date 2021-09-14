@@ -12,14 +12,20 @@ namespace RssReader
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        string url = "";   //表示するURL 
+        public Form2(string url)
         {
-            InitializeComponent();
+            this.url = url;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            wbBrowser2.Url = new Uri(url);
+        }
+        //ページの読み込みが完了すると呼ばれる
+        private void wbBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs)
+        {
+            btBack.Enabled = wbBrowser2
         }
     }
 }

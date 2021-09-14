@@ -34,7 +34,7 @@ namespace RssReader
             this.lbTitles = new System.Windows.Forms.ListBox();
             this.btRead = new System.Windows.Forms.Button();
             this.wbBrowser = new System.Windows.Forms.WebBrowser();
-            this.lbDescription = new System.Windows.Forms.Label();
+            this.lbdescription = new System.Windows.Forms.Label();
             this.bt1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -86,12 +86,12 @@ namespace RssReader
             // 
             // lbDescription
             // 
-            this.lbDescription.AutoSize = true;
-            this.lbDescription.Location = new System.Drawing.Point(31, 79);
-            this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(43, 15);
-            this.lbDescription.TabIndex = 5;
-            this.lbDescription.Text = "label2";
+            this.lbdescription.AutoSize = true;
+            this.lbdescription.Location = new System.Drawing.Point(31, 79);
+            this.lbdescription.Name = "lbDescription";
+            this.lbdescription.Size = new System.Drawing.Size(43, 15);
+            this.lbdescription.TabIndex = 5;
+            this.lbdescription.Text = "label2";
             // 
             // bt1
             // 
@@ -109,7 +109,7 @@ namespace RssReader
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.bt1);
-            this.Controls.Add(this.lbDescription);
+            this.Controls.Add(this.lbdescription);
             this.Controls.Add(this.wbBrowser);
             this.Controls.Add(this.btRead);
             this.Controls.Add(this.lbTitles);
@@ -129,7 +129,7 @@ namespace RssReader
         private System.Windows.Forms.ListBox lbTitles;
         private System.Windows.Forms.Button btRead;
         private System.Windows.Forms.WebBrowser wbBrowser;
-        private System.Windows.Forms.Label lbDescription;
+        private System.Windows.Forms.Label lbdescription;
         private System.Windows.Forms.Button bt1;
     }
 }
