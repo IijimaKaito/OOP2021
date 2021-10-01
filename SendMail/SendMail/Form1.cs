@@ -34,13 +34,21 @@ namespace SendMail
                 mailMessage.From = new MailAddress(settings.MailAddr);
                 //宛先（To）
                 mailMessage.To.Add(tbTo.Text);
-
-                mailMessage.CC.Add(tbCc.Text);
-                mailMessage.Bcc.Add(tbBcc.Text);
+                if(tbCc.Text !="")
+                { 
+                    mailMessage.CC.Add(tbCc.Text);
+                }
+                if(tbBcc.Text != "")
+                {
+                    mailMessage.Bcc.Add(tbBcc.Text);
+                }
+                
                 //件名（タイトル）
                 mailMessage.Subject = tbTitle.Text;
+
                 //本文
                 mailMessage.Body = tbMessage.Text;
+
                 //SMTPを使ってメールを送信する
                 SmtpClient smtpClient = new SmtpClient();
                 //メール送信のための認証情報を設定（ユーザー名、パスワード）
@@ -48,9 +56,13 @@ namespace SendMail
                 smtpClient.Host = settings.Host;
                 smtpClient.Port = settings.Port;
                 smtpClient.EnableSsl = settings.Ssl;
-                smtpClient.Send(mailMessage);
 
-                MessageBox.Show("送信完了");
+                //送信完了時に呼ばれるイベントハンドラの登録
+                smtpClient.SendCompleted += smtpClient_SendCompleted;
+                string userState = "sendMail";
+                smtpClient.SendAsync(mailMessage, userState);
+
+                //MessageBox.Show("送信完了");
             }
             catch(Exception ex)
             {
@@ -58,9 +70,21 @@ namespace SendMail
             }
         }
 
+        private void smtpClient_SendCompleted(object sender, AsyncCompletedEventArgs e)
+        {
+            if(e.Error != null)
+            {
+                MessageBox.Show(e.Error.Message);
+            }else
+            {
+                MessageBox.Show("送信完了");
+            }
+            
+        }    
+
         private void btConfig_Click(object sender, EventArgs e)
         {
-            new ConfigForm().ShowDialog();
+            configForm.ShowDialog();
         }
     }
 }
