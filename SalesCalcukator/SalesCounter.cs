@@ -36,10 +36,12 @@ namespace SalesCalculator {
             //店舗別売上げを求める
            public IDictionary<string, int> GetPerStoreSales() {
                 var dict = new Dictionary<string, int>();
-                foreach (var sale in _sales) {
-                    if (dict.ContainsKey(sale.ShopName))
-                        //既にコレクションに店舗が設定されている
-                        dict[sale.ShopName] += sale.Amount;
+                foreach (var sale in _sales) { 
+                sale.ShopName = _sales.Sum(sale.Amount);
+                if (dict.ContainsKey(sale.ShopName))
+                    //既にコレクションに店舗が設定されている
+
+                   
                     else
                         //コレクションへ店舗を登録
                         dict[sale.ShopName] = sale.Amount;
