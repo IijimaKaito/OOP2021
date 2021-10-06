@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace SendMail
 { 
@@ -29,9 +31,12 @@ namespace SendMail
             cbSsl.Checked = settings.bSsl();//SSL
             tbSender.Text = settings.sMailAddr();//送信元
         }
+
         private void btOk_Click(object sender, EventArgs e)
         {
+
             SettingRegist();
+           
             this.Close();
         }
         //送信データ登録
@@ -42,7 +47,19 @@ namespace SendMail
             settings.MailAddr = tbUser.Text;
             settings.Pass = tbPass.Text;
             settings.Ssl = cbSsl.Checked;
-           
+            //シリアル化
+            var xms = new XmlWriterSettings
+            {
+                Encoding = new System.Text.UTF8Encoding(false),
+                Indent = true,
+                IndentChars = " ",
+            };
+
+            using (var writer = XmlWriter.Create("mailsetting.xml", xms))
+            {
+                var serializer = new DataContractSerializer(settings.GetType());
+                serializer.WriteObject(writer, settings);
+            }
         }
 
         private void btCancel_Click(object sender, EventArgs e)
