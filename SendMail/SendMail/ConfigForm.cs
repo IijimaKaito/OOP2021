@@ -48,14 +48,14 @@ namespace SendMail
             settings.Pass = tbPass.Text;
             settings.Ssl = cbSsl.Checked;
             //シリアル化
-            var xms = new XmlWriterSettings
+            var xws = new XmlWriterSettings
             {
                 Encoding = new System.Text.UTF8Encoding(false),
                 Indent = true,
                 IndentChars = " ",
             };
 
-            using (var writer = XmlWriter.Create("mailsetting.xml", xms))
+            using (var writer = XmlWriter.Create("mailsetting.xml", xws))
             {
                 var serializer = new DataContractSerializer(settings.GetType());
                 serializer.WriteObject(writer, settings);
@@ -70,6 +70,17 @@ namespace SendMail
         private void btApply_Click(object sender, EventArgs e)
         {
             SettingRegist();//送信データ登録
+        }
+
+        private void ConfigForm_Load(object sender, EventArgs e)
+        {
+            tbHost.Text = settings.Host;
+            tbPort.Text = settings.Port.ToString();
+            tbUser.Text  = settings.MailAddr;
+            tbPass.Text = settings.Pass;
+            cbSsl.Checked = settings.Ssl;
+            tbSender.Text = settings.MailAddr;
+  
         }
     }
 }
