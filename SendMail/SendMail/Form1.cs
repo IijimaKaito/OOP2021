@@ -28,6 +28,11 @@ namespace SendMail
 
         private void btSend_Click(object sender, EventArgs e)
         {
+            if (!Settings.Set)
+            {
+                MessageBox.Show("送信情報を設定してください");
+                return;
+            }
             try
             {
                 //メール送信のためのインスタンスを生成
@@ -71,47 +76,53 @@ namespace SendMail
                 MessageBox.Show(ex.Message);
             }
         }
-
+        //送信が完了すると呼ばれるコールバックメソッド
         private void smtpClient_SendCompleted(object sender, AsyncCompletedEventArgs e)
-        {
+        { 
             if(e.Error != null)
             {
                 MessageBox.Show(e.Error.Message);
-            }else
+            }
+            else
             {
                 MessageBox.Show("送信完了");
+                Clear();
             }
-            
+
         }    
 
         private void btConfig_Click(object sender, EventArgs e)
         {
             configForm.ShowDialog();
         }
-        private void Form1_Load(object sender,EventArgs e)
+
+        private void Form1_Load(object sender, EventArgs e)
         {
-            //XMLファイルを読み込み（逆シリアル化）
-            using(var reader = XmlReader.Create("mailsetting.xml"))
+            //起動時に送信情報が未設定の場合設定画面を表示する
+            if (!Settings.Set)
             {
-                var serializer = new DataContractSerializer(typeof(Settings));
-                var readSettings= serializer.ReadObject(reader) as Settings;
-
-                settings.Host = readSettings.Host;
-                settings.Port = readSettings.Port;
-                settings.MailAddr = readSettings.MailAddr;
-                settings.Pass = readSettings.Pass;
-                settings.Ssl = readSettings.Ssl;
-
-                //設定データがない場合に設定画面を表示
-                if ()
-                {
-                    configForm.ShowDialog();
-                }
-                else
-                {
-
-                }
+                configForm.ShowDialog();
             }
+        }
+
+        private void 終了XToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void 新規作成NToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clear();
+
+        }
+        //削除メソッド
+        private void Clear()
+        {
+            tbBcc.Text = null;
+            tbCc.Text = null;
+            tbMessage.Text = null;
+            tbTitle.Text = null;
+            tbTo.Text = null;
         }
     }
 }

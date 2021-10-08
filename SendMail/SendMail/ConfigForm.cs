@@ -31,47 +31,26 @@ namespace SendMail
             cbSsl.Checked = settings.bSsl();//SSL
             tbSender.Text = settings.sMailAddr();//送信元
         }
-
+        //OKボタン
         private void btOk_Click(object sender, EventArgs e)
         {
+            btApply_Click(sender, e);
 
-            SettingRegist();
-           
             this.Close();
         }
-        //送信データ登録
-        private void SettingRegist()
-        {
-            settings.Host = tbHost.Text;
-            settings.Port = int.Parse(tbPort.Text);
-            settings.MailAddr = tbUser.Text;
-            settings.Pass = tbPass.Text;
-            settings.Ssl = cbSsl.Checked;
-            //シリアル化
-            var xws = new XmlWriterSettings
-            {
-                Encoding = new System.Text.UTF8Encoding(false),
-                Indent = true,
-                IndentChars = " ",
-            };
-
-            using (var writer = XmlWriter.Create("mailsetting.xml", xws))
-            {
-                var serializer = new DataContractSerializer(settings.GetType());
-                serializer.WriteObject(writer, settings);
-            }
-        }
-
+        //キャンセルボタン
         private void btCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        //適用ボタン
         private void btApply_Click(object sender, EventArgs e)
         {
-            SettingRegist();//送信データ登録
+            //Settingオブジェクトに入力データを渡して登録を行う
+            settings.setSendConfig(tbHost.Text, int.Parse(tbPort.Text),
+                tbUser.Text, tbPass.Text, cbSsl.Checked);
         }
-
+        //設定画面をロードすると一度だけ実行されるイベントハンドラ
         private void ConfigForm_Load(object sender, EventArgs e)
         {
             tbHost.Text = settings.Host;
