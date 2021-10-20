@@ -99,6 +99,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendMail", "SendMail\SendMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Section04_Json", "Chapter14\Section04_Json\Section04_Json.csproj", "{3F3865A3-4D5E-4E43-94A9-EEA8A1EDF0A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleEntityFramework", "EntityFramework\SampleEntityFramework\SampleEntityFramework.csproj", "{E9726E4F-DA1F-41B2-84AD-C7EC76A30BFD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Chapter13", "Chapter13", "{A082BA10-4371-4690-866A-08798C458CE2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -229,6 +233,10 @@ Global
 		{3F3865A3-4D5E-4E43-94A9-EEA8A1EDF0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F3865A3-4D5E-4E43-94A9-EEA8A1EDF0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F3865A3-4D5E-4E43-94A9-EEA8A1EDF0A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9726E4F-DA1F-41B2-84AD-C7EC76A30BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9726E4F-DA1F-41B2-84AD-C7EC76A30BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9726E4F-DA1F-41B2-84AD-C7EC76A30BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9726E4F-DA1F-41B2-84AD-C7EC76A30BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -267,6 +275,7 @@ Global
 		{B0F822AC-D5B0-480F-BF37-0343FB7E8427} = {9A201134-07D1-4079-A798-DF91AEB24458}
 		{A09752EF-D814-489D-B9B9-A1193CF877EE} = {29955D42-8C25-4403-9B54-6944764CD484}
 		{3F3865A3-4D5E-4E43-94A9-EEA8A1EDF0A2} = {43A0945D-3241-4CC5-8981-8CEBF5B5DCAC}
+		{E9726E4F-DA1F-41B2-84AD-C7EC76A30BFD} = {A082BA10-4371-4690-866A-08798C458CE2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F8C9D888-4756-447A-B601-702868020EAC}
