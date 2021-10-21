@@ -16,19 +16,19 @@ namespace SampleEntityFramework
 
 
             //データの追加
-            InsertBooks();
+            //InsertBooks();
             //DisplayAllBooks();
-            AddAuthors();
-            AddBooks();
-            UpdateBook();
-            DeleteBook();
+            //AddAuthors();
+            //AddBooks();
+            //UpdateBook();
+            //DeleteBook();
             //a();
             //b();
             //c();
             Console.WriteLine("#1.1");
-            Exercise13_1_1();
+            //Exercise13_1_1();
             Console.WriteLine("#1.2");
-            //Exercise13_1_2();
+            Exercise13_1_2();
             Console.WriteLine("#1.3");
             Exercise13_1_3();
             Console.WriteLine("#1.4");
@@ -55,16 +55,29 @@ namespace SampleEntityFramework
 
         private static void Exercise13_1_3()
         {
-
+            using (var db = new BooksDbContext())
+            {
+                var books = db.Books.Where(b => b.Title.Length == db.Books.Max(x => x.Title.Length));
+                foreach (var book in books)
+                {
+                    Console.WriteLine("{0} {1} {2}({3:yyy/mm/dd})",
+                    book.Title, book.PublishedYear,
+                    book.Author.Name, book.Author.Birthday
+                    );
+                }
+            }
         }
 
         private static void Exercise13_1_2()
         {
             using (var db = new BooksDbContext())
            {
-                foreach(var books in db.Books. )
+                foreach(var book in db.Books.OrderBy(b=>b.Author.Name))
                 {
-
+                    Console.WriteLine("{0} {1} {2}({3:yyy/mm/dd})",
+                    book.Title,book.PublishedYear,
+                    book.Author.Name,book.Author.Birthday
+                    );
                 }
             }
         }
