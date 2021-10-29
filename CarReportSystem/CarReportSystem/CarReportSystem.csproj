@@ -33,7 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -53,6 +55,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="infosys202111DataSet.cs">
+      <DependentUpon>infosys202111DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="infosys202111DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infosys202111DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="infosys202111DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infosys202111DataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -67,6 +82,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="infosys202111DataSet.xsc">
+      <DependentUpon>infosys202111DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="infosys202111DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>infosys202111DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="infosys202111DataSet.xss">
+      <DependentUpon>infosys202111DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="infosys202111DataSet1.xsc">
+      <DependentUpon>infosys202111DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="infosys202111DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>infosys202111DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="infosys202111DataSet1.xss">
+      <DependentUpon>infosys202111DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
