@@ -181,5 +181,6 @@ namespace CarReportSystem {
             dgvRegistData.Columns[5].Visible = false;
 
         }
+
     } 
 }

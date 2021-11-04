@@ -74,5 +74,10 @@ namespace AddressBook
         {
             this.personTableAdapter.FillByBirthday(this.infosys202111DataSet.Person,dateTimePicker1.Text);
         }
+
+        private void tbMemo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
