@@ -63,11 +63,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>infosys202111DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="infosys202111DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>infosys202111DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -92,17 +87,6 @@
     </None>
     <None Include="infosys202111DataSet.xss">
       <DependentUpon>infosys202111DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="infosys202111DataSet1.xsc">
-      <DependentUpon>infosys202111DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="infosys202111DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>infosys202111DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="infosys202111DataSet1.xss">
-      <DependentUpon>infosys202111DataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
