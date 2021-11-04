@@ -58,8 +58,6 @@ namespace CarReportSystem {
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.infosys202111DataSet1 = new CarReportSystem.infosys202111DataSet();
             this.dgvRegistData = new System.Windows.Forms.DataGridView();
-            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.carReportTableAdapter1 = new CarReportSystem.infosys202111DataSetTableAdapters.CarReportTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.authorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +65,8 @@ namespace CarReportSystem {
             this.carNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.reportDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.carReportTableAdapter1 = new CarReportSystem.infosys202111DataSetTableAdapters.CarReportTableAdapter();
             this.gbMaker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -376,15 +376,6 @@ namespace CarReportSystem {
             this.dgvRegistData.Size = new System.Drawing.Size(619, 150);
             this.dgvRegistData.TabIndex = 11;
             // 
-            // bindingSource2
-            // 
-            this.bindingSource2.DataMember = "CarReport";
-            this.bindingSource2.DataSource = this.infosys202111DataSet1;
-            // 
-            // carReportTableAdapter1
-            // 
-            this.carReportTableAdapter1.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -426,6 +417,15 @@ namespace CarReportSystem {
             this.pictureDataGridViewImageColumn.DataPropertyName = "Picture";
             this.pictureDataGridViewImageColumn.HeaderText = "Picture";
             this.pictureDataGridViewImageColumn.Name = "pictureDataGridViewImageColumn";
+            // 
+            // bindingSource2
+            // 
+            this.bindingSource2.DataMember = "CarReport";
+            this.bindingSource2.DataSource = this.infosys202111DataSet1;
+            // 
+            // carReportTableAdapter1
+            // 
+            this.carReportTableAdapter1.ClearBeforeFill = true;
             // 
             // fmMain
             // 

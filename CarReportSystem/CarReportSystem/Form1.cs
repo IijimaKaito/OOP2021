@@ -134,7 +134,7 @@ namespace CarReportSystem {
             dgvRegistData.Refresh();//コントロールの強制再起動
         }
 
-        private void btSave_Click(object sender, EventArgs e) {
+       private void btOpen_Click(object sender, EventArgs e) {
             if (sfdFileSave.ShowDialog() == DialogResult.OK) {
                 try {
                     //バイナリ形式でシリアル化
@@ -150,7 +150,7 @@ namespace CarReportSystem {
                 }
             }
         }
-        private void btOpen_Click(object sender, EventArgs e) {
+        private void btSave_Click(object sender, EventArgs e) {
             if (ofdFileOpen.ShowDialog() == DialogResult.OK) {
                 try {    
                 //バイナリ形式で逆シリアル化
@@ -177,7 +177,8 @@ namespace CarReportSystem {
             }
         }
 
-        private void fmMain_Load_1(object sender, EventArgs e) {
+        private void fmMain_Load_1(object sender, EventArgs e)
+        {
             // TODO: このコード行はデータを 'infosys202111DataSet1.CarReport' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
             this.carReportTableAdapter1.Fill(this.infosys202111DataSet1.CarReport);
             dgvRegistData.Columns[5].Visible = false;
