@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.DataVisualization.Charting;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,10 +20,15 @@ namespace NumberGame
     /// MainWindow.xaml の相互作用ロジック
     /// </summary>
     public partial class MainWindow : Window
-    {
+    { 
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void bt1_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
