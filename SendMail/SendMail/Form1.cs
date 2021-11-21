@@ -20,7 +20,7 @@ namespace SendMail
         //設定画面
         private ConfigForm configForm = new ConfigForm();
         //設定情報
-        private Settings settings = Settings.getInstance();
+        Settings settings = Settings.getInstance();
         public Form1()
         {
             InitializeComponent();
@@ -118,11 +118,11 @@ namespace SendMail
         //削除メソッド
         private void Clear()
         {
-            tbBcc.Text = null;
-            tbCc.Text = null;
-            tbMessage.Text = null;
-            tbTitle.Text = null;
-            tbTo.Text = null;
+            tbBcc.Clear();
+            tbCc.Clear();
+            tbMessage.Clear();
+            tbTitle.Clear();
+            tbTo.Clear();
         }
     }
 }
