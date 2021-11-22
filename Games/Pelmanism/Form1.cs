@@ -165,10 +165,23 @@ namespace Pelmanism
         /// カードを混ぜる
         /// </summary>
         /// <param name="playingCards">カードの配列</param>
-        private void ShuffleCard(Card[] playingCards)
+        private Card[] ShuffleCard(Card[] playingCards)
         {
             Random random = new Random();
-           
+            var length = playingCards.Length;
+            var result = new Card[length];
+            Array.Copy(playingCards, result, length);
+
+            int n = length;
+            while (1 < n)
+            {
+                n--;
+                int k = random.Next(n + 1);
+                var tmp = result[k];
+                result[k] = result[n];
+                result[n] = tmp;
+            }
+            return result;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
