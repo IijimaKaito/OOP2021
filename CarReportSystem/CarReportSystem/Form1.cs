@@ -99,16 +99,16 @@ namespace CarReportSystem {
         private void setMakerRadioButton(CarReport.MakerGroup mg) {
             switch (mg) {
                 case CarReport.MakerGroup.トヨタ:
-                    rbToyota.Checked = true;
+                    rbT.Checked = true;
                     break;
                 case CarReport.MakerGroup.日産:
-                    rbNissan.Checked = true;
+                    rbN.Checked = true;
                     break;
                 case CarReport.MakerGroup.ホンダ:
-                    rbHonda.Checked = true;
+                    rbH.Checked = true;
                     break;
                 case CarReport.MakerGroup.スバル:
-                    rbSubaru.Checked = true;
+                    rbS.Checked = true;
                     break;
                 case CarReport.MakerGroup.外国車:
                     rbImport.Checked = true;
@@ -180,9 +180,10 @@ namespace CarReportSystem {
         private void fmMain_Load_1(object sender, EventArgs e)
         {
             // TODO: このコード行はデータを 'infosys202111DataSet1.CarReport' テーブルに読み込みます。必要に応じて移動、または削除をしてください。
-            this.carReportTableAdapter1.Fill(this.infosys202111DataSet1.CarReport);
+            this.carReportTableAdapter1.Fill(this.infosys202111DataSet.CarReport);
             dgvRegistData.Columns[5].Visible = false;
 
         }
+
     } 
 }

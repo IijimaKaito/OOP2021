@@ -27,20 +27,10 @@ namespace CarReportSystem.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.42.1;Initial Catalog=infosys202111;Persist Security Info=True;" +
-            "User ID=gu")]
+            "User ID=gu;Password=c42dbpass")]
         public string infosys202111ConnectionString {
             get {
                 return ((string)(this["infosys202111ConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=172.16.42.1;User ID=gu;Password=c42dbpass")]
-        public string ConnectionString {
-            get {
-                return ((string)(this["ConnectionString"]));
             }
         }
     }
