@@ -35,7 +35,7 @@ namespace Pelmanism
                 OpenCounter++;
             }
         }
-        //今回１枚目に開いたカードの添え字
+        //今回2枚目に開いたカードの添え字
         public int NowOpenCardIndex2
         {
             get { return nowOpenCardIndex2; }
